@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TableCalendar(
               events: _events,
               initialCalendarFormat: CalendarFormat.week,
-              calendarStyle: CalendarStyle(
+              calendarStyle: const CalendarStyle(
                   canEventMarkersOverflow: true,
                   todayColor: Colors.redAccent,
                   selectedColor: Colors.redAccent,
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.orange,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                formatButtonTextStyle: TextStyle(color: Colors.white),
+                formatButtonTextStyle: const TextStyle(color: Colors.white),
                 formatButtonShowsNext: false,
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(10.0)),
                     child: Text(
                       date.day.toString(),
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     )),
                 todayDayBuilder: (context, date, events) => Container(
                     margin: const EdgeInsets.all(4.0),
@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(10.0)),
                     child: Text(
                       date.day.toString(),
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     )),
               ),
               calendarController: _controller,
@@ -149,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 child: Center(
                     child: Text(event,
-                      style: TextStyle(color: Colors.redAccent,
+                      style: const TextStyle(color: Colors.redAccent,
                           fontWeight: FontWeight.bold,fontSize: 16),)
                 ),
               ),
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blueGrey,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: _showAddDialog,
       ),
     );
@@ -178,13 +178,13 @@ class _MyHomePageState extends State<MyHomePage> {
         context: context,
         builder: (context) => AlertDialog(
           backgroundColor: Colors.white70,
-          title: Text("Add Events"),
+          title: const Text("Add Events"),
           content: TextField(
             controller: _eventController,
           ),
           actions: <Widget>[
-            FlatButton(
-              child: Text("Save",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
+            TextButton(
+              child: const Text("Save",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
               onPressed: () {
                 if (_eventController.text.isEmpty) return;
                 setState(() {
